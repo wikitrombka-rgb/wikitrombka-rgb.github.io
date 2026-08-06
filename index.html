@@ -137,6 +137,7 @@
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.15; margin-bottom: 1.25rem;
   }
+  .section-title em { font-style: italic; color: var(--teal); }
   .section-desc {
     font-size: 1rem; color: var(--muted);
     max-width: 580px; line-height: 1.75;
@@ -236,36 +237,6 @@
     font-size: 0.825rem; color: var(--muted); line-height: 1.6;
   }
 
-  /* KING OSCAR */
-  .ko-section { background: #2d1a22; color: var(--white); padding: 6rem 0; }
-  .ko-inner {
-    max-width: 1100px; margin: 0 auto; padding: 0 3rem;
-  }
-  .ko-inner .section-eyebrow { color: #8ecece; }
-  .ko-inner .section-title { color: var(--white); }
-  .ko-inner .section-desc { color: rgba(255,255,255,0.55); }
-  .ko-cards {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem; margin-top: 1rem;
-  }
-  .ko-card {
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px; padding: 1.75rem;
-  }
-  .ko-card-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2.5rem; color: #8ecece;
-    margin-bottom: 0.75rem;
-  }
-  .ko-card h4 {
-    font-size: 0.95rem; font-weight: 600;
-    color: var(--white); margin-bottom: 0.5rem;
-  }
-  .ko-card p {
-    font-size: 0.85rem; color: rgba(255,255,255,0.5);
-    line-height: 1.65;
-  }
-
   /* JOURNALISTIKK */
   .journo-grid {
     display: grid; grid-template-columns: 1.2fr 1fr;
@@ -296,6 +267,88 @@
     text-align: center;
   }
 
+  /* INNHOLDSEKSEMPLER */
+  .video-section { background: var(--cream); padding: 6rem 0; }
+  .video-inner { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+  .video-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; margin-top: 1rem;
+  }
+  .video-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.25rem;
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
+  .video-card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .video-tag {
+    padding: 0.3rem 0.7rem;
+    background: var(--light-teal);
+    color: var(--teal);
+    border-radius: 100px;
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.03em; text-transform: uppercase;
+  }
+  .video-card h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem; color: var(--black);
+    line-height: 1.3;
+  }
+  .video-card p {
+    font-size: 0.825rem; color: var(--muted); line-height: 1.6;
+  }
+  .video-embed {
+    border-radius: 12px; overflow: hidden;
+    background: var(--black);
+    min-height: 280px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .video-embed blockquote.tiktok-embed { margin: 0 !important; }
+  .video-note {
+    margin-top: 2rem; font-size: 0.8rem; color: var(--muted);
+    font-style: italic;
+  }
+
+  /* JOURNALISTIKK — SAKER */
+  .journo-section { padding: 6rem 3rem; max-width: 1100px; margin: 0 auto; }
+  .journo-cards { display: grid; gap: 1.5rem; margin-top: 1rem; }
+  .journo-card {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .journo-card-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: var(--teal);
+    line-height: 1;
+  }
+  .journo-meta {
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 0.6rem;
+  }
+  .journo-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; line-height: 1.3;
+    margin-bottom: 0.6rem; color: var(--black);
+  }
+  .journo-card p {
+    font-size: 0.9rem; color: var(--muted);
+    line-height: 1.7; margin-bottom: 1rem;
+  }
+  .journo-link {
+    font-size: 0.825rem; font-weight: 600;
+    color: var(--teal); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .journo-link:hover { text-decoration: underline; }
+
   /* KONTAKT */
   .kontakt {
     background: var(--cream);
@@ -304,7 +357,7 @@
   .kontakt h2 {
     font-family: 'DM Serif Display', serif;
     font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
+    margin-bottom: 2.25rem;
   }
   .kontakt p { color: var(--muted); margin-bottom: 2rem; }
   .kontakt a {
@@ -322,8 +375,10 @@
 
   @media (max-width: 768px) {
     .stats { grid-template-columns: 1fr 1fr; }
-    .fc-grid, .redesign-grid, .journo-grid { grid-template-columns: 1fr; }
-    .ko-cards, .redesign-changes, .fc-stats { grid-template-columns: 1fr; }
+    .fc-grid, .redesign-grid { grid-template-columns: 1fr; }
+    .redesign-changes, .fc-stats { grid-template-columns: 1fr; }
+    .journo-card { grid-template-columns: 1fr; }
+    .video-grid { grid-template-columns: 1fr 1fr; }
     .troll-inner { grid-template-columns: 1fr; }
     nav .nav-links { display: none; }
   }
@@ -336,8 +391,9 @@
   <div class="nav-name">Wiktoria Trembasiewicz</div>
   <div class="nav-links">
     <a href="#fastcandy">Fast Candy</a>
+    <a href="#innhold">Innhold</a>
     <a href="#redesign">Redesign</a>
-    <a href="#kingoscar">King Oscar</a>
+    <a href="#journalistikk">Journalistikk</a>
     <a href="#kontakt">Kontakt</a>
   </div>
 </nav>
@@ -346,9 +402,9 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="eyebrow">Innholdsprodusent & Journalist</div>
-    <h1>Innhold som<br><em>stopper scrollingen</em></h1>
+    <h1>Historier som<br><em>fortjener å bli fortalt</em></h1>
     <p class="hero-desc">
-      Jeg lager innhold som treffer – ute hos kunden, i studio, eller på gata.
+      Jeg graver frem sakene, forteller dem, og skaper innhold som når frem.
     </p>
     <div class="hero-tags">
       <span class="tag">TikTok & YouTube</span>
@@ -359,26 +415,6 @@
     </div>
   </div>
 </section>
-
-<!-- STATS -->
-<div class="stats">
-  <div>
-    <div class="stat-num">13,5M</div>
-    <div class="stat-label">TikTok views</div>
-  </div>
-  <div>
-    <div class="stat-num">10,6M</div>
-    <div class="stat-label">YouTube views</div>
-  </div>
-  <div>
-    <div class="stat-num">1,2M</div>
-    <div class="stat-label">Snapchat visninger</div>
-  </div>
-  <div>
-    <div class="stat-num">65%</div>
-    <div class="stat-label">Organisk FYP-rekkevidde</div>
-  </div>
-</div>
 
 <!-- FAST CANDY -->
 <section id="fastcandy">
@@ -414,6 +450,128 @@
       <div class="fc-stat-label">Snapchat visninger / 250k seere</div>
     </div>
   </div>
+</section>
+
+<!-- INNHOLDSEKSEMPLER -->
+<div class="video-section" id="innhold">
+  <div class="video-inner">
+    <div class="section-eyebrow">Innholdseksempler</div>
+    <h2 class="section-title">Se innholdet<br><em>med egne øyne</em></h2>
+    <p class="section-desc">
+      Her er noe av det jeg har produsert.
+    </p>
+
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-card-tags">
+          <span class="video-tag">Fast Candy</span>
+          <span class="video-tag">Trend</span>
+        </div>
+        <h4>Emoji Challenge</h4>
+        <p>Produktpromotering via en populær TikTok-trend, tilpasset den unge målgruppen for høy engasjementsrate.</p>
+        <div class="video-embed">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fastcandynorge/video/7525390749865643286" data-video-id="7525390749865643286" style="max-width: 300px; min-width: 200px;">
+            <section></section>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-card-tags">
+          <span class="video-tag">Fast Candy</span>
+          <span class="video-tag">Kampanje</span>
+        </div>
+        <h4>Crunch Punch — 17. mai</h4>
+        <p>På-gata-teasing av produktet i forkant av 17. mai, bevisst laget for å skape diskusjon.</p>
+        <div class="video-embed">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fastcandynorge/video/7640069232495021334" data-video-id="7640069232495021334" style="max-width: 300px; min-width: 200px;">
+            <section></section>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-card-tags">
+          <span class="video-tag">Trollparts</span>
+          <span class="video-tag">Tjeneste</span>
+        </div>
+        <h4>TrollParts</h4>
+        <p>Anvender aktuelle trender for å promotere produktene og tilbudene, tilpasset en eldre og mer praktisk anlagt målgruppe.</p>
+        <div class="video-embed">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@trollparts/video/7503483536809200918" data-video-id="7503483536809200918" style="max-width: 300px; min-width: 200px;">
+            <section></section>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-card-tags">
+          <span class="video-tag">Fast Candy</span>
+          <span class="video-tag">Lansering</span>
+        </div>
+        <h4>Ramadan-kalender</h4>
+        <p>Tidsriktig promotering av ramadankalenderen, timet for maksimal trafikk til butikk.</p>
+        <div class="video-embed">
+          <blockquote class="tiktok-embed" cite="https://vm.tiktok.com/ZNR3xy5PK" style="max-width: 300px; min-width: 200px;">
+            <section></section>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <p class="video-note">Videoene lastes direkte fra TikTok og krever JavaScript aktivert i nettleseren.</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- JOURNALISTIKK -->
+<section class="journo-section" id="journalistikk">
+  <div class="section-eyebrow">Eksempler på saker</div>
+  <h2 class="section-title">Journalistisk<br>teft</h2>
+  <p class="section-desc">
+    Gjennom å jobbe som journalist har jeg utviklet evnen til å levere raskt, finne gode
+    vinklinger der det tilsynelatende ikke skjer noe, stille de riktige spørsmålene og
+    ta gode etiske vurderinger. Under følger et utvalg av sakene jeg har skrevet.
+  </p>
+
+  <div class="journo-cards">
+    <div class="journo-card">
+      <div class="journo-card-num">01</div>
+      <div>
+        <div class="journo-meta">Universitas · 14. mars 2026 · Nyhet / Feature</div>
+        <h3>Historien bak konflikten: «Nordmenn var billige løpegutter for Israel»</h3>
+        <p>Et dybdeintervju med historieprofessor Hilde Henriksen Waage om Israel-Palestina-konflikten, Norges historiske rolle og hvorfor hun mener studenter må forstå historien for å forstå nåtiden.</p>
+        <a class="journo-link" href="https://universitas.no/hilde-henriksen-waage-iran-israel/historien-bak-konflikten-nordmennene-var-billige-lopegutter-for-israel/399460" target="_blank" rel="noopener">Les saken →</a>
+      </div>
+    </div>
+
+    <div class="journo-card">
+      <div class="journo-card-num">02</div>
+      <div>
+        <div class="journo-meta">Universitas · 26. mai 2026 · Nyhet</div>
+        <h3>UiOs klimaregnskap 2025: Flyreiser gjør klimamålet vanskelig å nå</h3>
+        <p>En databasert nyhetssak om UiOs klimaregnskap for 2025, der flyreiser utpeker seg som den største utfordringen for å nå klimamålet innen 2030. Bygget på offisielle tall fra universitetets egne rapporter.</p>
+        <a class="journo-link" href="https://universitas.no/flyreiser-klimagassutslipp-klimaregnskap/uios-klimaregnskap-for-2025-de-lavthengende-fruktene-er-allerede-tatt/404463" target="_blank" rel="noopener">Les saken →</a>
+      </div>
+    </div>
+
+    <div class="journo-card">
+      <div class="journo-card-num">03</div>
+      <div>
+        <div class="journo-meta">Enebakk Avis · Juli 2024 · Nyhet</div>
+        <h3>Reagerer på tilbudet moren fikk under opphold på Ignagard</h3>
+        <p>En lokaljournalistisk sak om en families opplevelse med et sykehjemsopphold i Enebakk. Viser evne til å håndtere sensitive menneskelige historier med respekt og presisjon under korte deadlines.</p>
+        <a class="journo-link" href="https://enebakkavis.no/reagerer-pa-tilbudet-moren-fikk-under-opphold-pa-ignagard/s/5-12-485961" target="_blank" rel="noopener">Les saken →</a>
+      </div>
+    </div>
+  </div>
+
+  <ul class="journo-list" style="margin-top: 2.5rem;">
+    <li><span>Dagbladet</span> Kjendisdesk – rask, nyhetsdrevet produksjon</li>
+    <li><span>Enebakk Avis</span> Lokaljournalistikk – finne historier, fotografere, publisere</li>
+    <li><span>Universitas</span> Frilans – studentavis med fokus på politikk og studentliv</li>
+  </ul>
 </section>
 
 <hr class="divider">
@@ -495,77 +653,14 @@
   </div>
 </section>
 
-<hr class="divider">
-
-<!-- KING OSCAR -->
-<div class="ko-section" id="kingoscar">
-  <div class="ko-inner">
-    <div class="section-eyebrow">Oppdrag — Oslo Reklamebyrå × King Oscar</div>
-    <h2 class="section-title">En TV-reklame.<br>To kulturer.</h2>
-    <p class="section-desc">
-      Hentet inn som kulturell konsulent og konseptutvikler for å lage en 30-sekunders TV-reklame 
-      som skulle treffe både norske og polske forbrukere – med én og samme fortelling.
-    </p>
-    <div class="ko-cards">
-      <div class="ko-card">
-        <div class="ko-card-num">01</div>
-        <h4>Det sosiale</h4>
-        <p>Far og sønn gjenforenes rundt et skap de finner under utflytting. King Oscar er bærebjelken gjennom generasjonene.</p>
-      </div>
-      <div class="ko-card">
-        <div class="ko-card-num">02</div>
-        <h4>Indulgence</h4>
-        <p>Tilbakeblikk fylt med matscener og varme minner – produktet som noe man unner seg, ikke bare spiser.</p>
-      </div>
-      <div class="ko-card">
-        <div class="ko-card-num">03</div>
-        <h4>Tillit på tvers</h4>
-        <p>Et produkt som har eksistert gjennom generasjoner. Trygt, kjent og universelt – uavhengig av kulturell bakgrunn.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- JOURNALISTIKK & VERKTØY -->
-<section>
-  <div class="journo-grid">
-    <div>
-      <div class="section-eyebrow">Bakgrunn</div>
-      <h2 class="section-title">Journalistisk<br>teft</h2>
-      <p class="section-desc" style="margin-bottom:1.5rem">
-        Journalistikken lærte meg å levere raskt, finne gode vinklinger der det tilsynelatende 
-        ikke skjer noe, og skrive tekster folk faktisk leser.
-      </p>
-      <ul class="journo-list">
-        <li><span>Dagbladet</span> Kjendisdesk – rask, nyhetsdrevet produksjon</li>
-        <li><span>Enebakk Avis</span> Lokaljournalistikk – finne historier, fotografere, publisere</li>
-        <li><span>Universitas</span> Frilans – studentavis med fokus på politikk og studentliv</li>
-      </ul>
-    </div>
-    <div>
-      <div class="section-eyebrow" style="margin-bottom:1rem">Verktøy</div>
-      <div class="tools-grid">
-        <div class="tool-badge">CapCut</div>
-        <div class="tool-badge">Photoshop</div>
-        <div class="tool-badge">InDesign</div>
-        <div class="tool-badge">Figma</div>
-        <div class="tool-badge">Labrador CMS</div>
-        <div class="tool-badge">Bird CRM</div>
-        <div class="tool-badge">TikTok Analytics</div>
-        <div class="tool-badge">YouTube Studio</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- KONTAKT -->
 <div class="kontakt" id="kontakt">
   <div class="eyebrow">La oss snakke</div>
-  <h2>Klar til å lage<br>innhold som treffer</h2>
-  <p>Innholdsprodusent med sans for historier, tall og mennesker.</p>
+  <h2>Klar til å fortelle<br>de gode historiene</h2>
   <a href="mailto:wiki.trombka@gmail.com">wiki.trombka@gmail.com</a>
   <div class="kontakt-meta">+47 967 36 407 &nbsp;·&nbsp; Oslo</div>
 </div>
 
+<script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
