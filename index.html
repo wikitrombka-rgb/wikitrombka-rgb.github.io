@@ -349,6 +349,110 @@
   }
   .journo-link:hover { text-decoration: underline; }
 
+
+
+  /* AKADEMISK ARBEID */
+  .academic-section {
+    padding: 6rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .academic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .academic-card {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: var(--white);
+  }
+
+  .academic-card.master { background: var(--cream); }
+
+  .academic-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .academic-pill {
+    padding: 0.35rem 0.75rem;
+    border-radius: 100px;
+    background: var(--light-teal);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .academic-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.55rem;
+    line-height: 1.25;
+    margin-bottom: 0.9rem;
+  }
+
+  .academic-card > p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.4rem;
+  }
+
+  .academic-points {
+    list-style: none;
+    display: grid;
+    gap: 0.8rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .academic-points li {
+    font-size: 0.84rem;
+    line-height: 1.6;
+    padding-left: 1.15rem;
+    position: relative;
+    color: var(--black);
+  }
+
+  .academic-points li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  .academic-link {
+    margin-top: auto;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 100px;
+    background: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .academic-link:hover {
+    transform: translateY(-1px);
+    opacity: 0.86;
+  }
+
   /* KONTAKT */
   .kontakt {
     background: var(--cream);
@@ -380,6 +484,7 @@
     .journo-card { grid-template-columns: 1fr; }
     .video-grid { grid-template-columns: 1fr 1fr; }
     .troll-inner { grid-template-columns: 1fr; }
+    .academic-grid { grid-template-columns: 1fr; }
     nav .nav-links { display: none; }
   }
 </style>
@@ -394,6 +499,7 @@
     <a href="#innhold">Innhold</a>
     <a href="#redesign">Redesign</a>
     <a href="#journalistikk">Journalistikk</a>
+    <a href="#akademisk">Akademisk</a>
     <a href="#kontakt">Kontakt</a>
   </div>
 </nav>
@@ -680,6 +786,54 @@
       <h4>Konverteringsfokus</h4>
       <p>Tydelige CTA-knapper, cleaner prisseksjon og sterkere visuell linje fra hero til konvertering.</p>
     </div>
+  </div>
+</section>
+
+
+<hr class="divider">
+
+<!-- AKADEMISK ARBEID -->
+<section class="academic-section" id="akademisk">
+  <div class="section-eyebrow">Forskning & analyse</div>
+  <h2 class="section-title">Akademisk<br><em>arbeid</em></h2>
+  <p class="section-desc">
+    To større forskningsarbeider innen journalistikk, medier og kommunikasjon — med vekt på kildebruk, medieutvikling, institusjonell kommunikasjon og kritisk analyse.
+  </p>
+
+  <div class="academic-grid">
+    <article class="academic-card master">
+      <div class="academic-meta">
+        <span class="academic-pill">Masteroppgave</span>
+        <span class="academic-pill">UiO · 60 studiepoeng</span>
+      </div>
+      <h3>«Taushet, tale og tradisjon»</h3>
+      <p>
+        En kritisk diskursanalyse av hvordan Det norske kongehus har kommunisert for å etablere og forhandle institusjonell legitimitet i forbindelse med fire kongelige bryllup fra 1968 til 2024.
+      </p>
+      <ul class="academic-points">
+        <li><strong>Metode:</strong> kvalitativ og komparativ casestudie med kritisk diskursanalyse.</li>
+        <li><strong>Funn:</strong> kommunikasjonen beveger seg fra lukket og formell, via personlig åpenhet, til strategisk tilbaketrekning og visuell symbolikk.</li>
+        <li><strong>Kompetanse:</strong> dybderesearch, historisk sammenligning, teoriarbeid og analyse av språk, makt og kommunikasjon.</li>
+      </ul>
+      <a class="academic-link" href="masteroppgave.pdf" target="_blank" rel="noopener">Les masteroppgaven →</a>
+    </article>
+
+    <article class="academic-card">
+      <div class="academic-meta">
+        <span class="academic-pill">Bacheloroppgave</span>
+        <span class="academic-pill">OsloMet · Journalistikk</span>
+      </div>
+      <h3>SoMe og Se og Hør</h3>
+      <p>
+        En undersøkelse av hvordan veksten av sosiale medier har endret kildebruken i kjendisjournalistikken til Se og Hør mellom 2009 og 2022.
+      </p>
+      <ul class="academic-points">
+        <li><strong>Metode:</strong> kvantitativ innholdsanalyse av 98 saker fra Seher.no.</li>
+        <li><strong>Funn:</strong> bruken av sosiale medier som kilde tidoblet seg, samtidig som journalistene generelt brukte flere kilder.</li>
+        <li><strong>Kompetanse:</strong> datainnsamling, koding, kildekritikk, reliabilitetstesting og analyse av journalistisk praksis.</li>
+      </ul>
+      <a class="academic-link" href="bacheloroppgave.pdf" target="_blank" rel="noopener">Les bacheloroppgaven →</a>
+    </article>
   </div>
 </section>
 
